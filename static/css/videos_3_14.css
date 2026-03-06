@@ -1,0 +1,52 @@
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    gap: 10px; /* Space between items */
+    max-width: 1200px; /* Constrain width */
+    margin: 0 auto;
+}
+
+.video-container {
+    text-align: center; /* Center text below videos */
+}
+
+.video-container video {
+    width: 200px; /* Adjust as needed */
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+.video-title {
+    margin-top: 5px; /* Space above the title */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Title text color */
+    font-weight: bold;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns for images */
+    gap: 10px;
+    max-width: 1200px;
+    margin: 20px auto; /* Add spacing from the video grid */
+    text-align: center;
+}
+
+.image-container img {
+    width: 1000px; /* Set image width */
+    height: 200px;
+    object-fit: cover; /* Keep aspect ratio */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-title {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}

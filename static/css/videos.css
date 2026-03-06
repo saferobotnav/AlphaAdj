@@ -1,0 +1,56 @@
+.video-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the grids */
+    gap: 20px; /* Space between baseline and LivePoint videos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Baseline videos: 2x5 grid */
+.baseline-videos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 10px; /* Space between videos */
+    width: 100%;
+    justify-content: center;
+}
+
+/* LivePoint videos: 1x2 grid, larger size */
+.livepoint-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    width: 80%;
+    justify-content: center;
+}
+
+/* General video container styling */
+.video-container {
+    text-align: center;
+}
+
+/* Standard size for baseline videos */
+.video-container video {
+    width: 200px;
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+/* Larger size for LivePoint videos */
+.livepoint video {
+    width: 300px; /* Increase size */
+    height: 225px;
+    border: 3px solid #444; /* Slightly darker border for emphasis */
+}
+
+/* Video titles */
+.video-title {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}

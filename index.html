@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="LivePoint: Vision-Based, Fully Decentralized, Safe, Deadlock-Free Multi-Robot Control in Social Mini-Games via Depth Sensor Input">
+    <meta name="keywords" content="LivePoint, CBFs, Point Clouds">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LivePoint</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/videos.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/ai.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LIVEPOINT: Fully Decentralized, Safe, Deadlock-Free Multi-Robot Control in Cluttered Environments with High-Dimensional Inputs</h1>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="Link Here">REMOVED--Name Here</a>,</span>
+              <span class="author-block">
+                <a href="Link Here">REMOVED--Name Here</a>
+              </span>
+            </div> -->
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block">REMOVED--University Name Here</span>
+            </div> -->
+
+            <!-- Links -->
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- <span class="link-block">
+                  <a href="REMOVED--Publication Link Here"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <!-- <span class="link-block">
+                  <a href="REMOVED--Publication Link Here"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://github.com/saferobotnav/livepoint-code-mrs2025"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="hero">
+    <div class="container is-max-desktop">
+        <div class="video-grid">
+
+            <!-- Baseline Videos (2x5 Grid) -->
+            <div class="baseline-videos">
+                <div class="video-container"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted></video><p>ORCA Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/mpc_robot_trajectory.mp4" controls autoplay loop muted></video><p>MPC-CBF Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/mpnet_robot_trajectory.mp4" controls autoplay loop muted></video><p>MP-Net Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/single_robot_trajectory.mp4" controls autoplay loop muted></video><p>Single Agent Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/lol_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint w/o Liveness Doorway</p></div>
+                <div class="video-container"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted></video><p>ORCA Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/mpc_robot_trajectory.mp4" controls autoplay loop muted></video><p>MPC-CBF Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/mpnet_robot_trajectory.mp4" controls autoplay loop muted></video><p>MP-Net Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/single_robot_trajectory.mp4" controls autoplay loop muted></video><p>Single Agent Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/lol_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint w/o Liveness Intersection</p></div>
+            </div>
+
+            <!-- LivePoint Videos (1x2 Grid, Larger) -->
+            <div class="livepoint-videos">
+                <div class="video-container livepoint"><video src="static/videos/doorway/livepoint_doorway_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint Doorway</p></div>
+                <div class="video-container livepoint"><video src="static/videos/intersection/livepoint_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint Intersection</p></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('video').forEach(video => {
+        video.playbackRate = 1.0;
+    });
+</script>
+
+
+<br><br>
+    
+<!-- Abstract. -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+          Fully decentralized, safe, and deadlock-free multirobot navigation in dynamic, cluttered environments is a critical
+          challenge in robotics. Current methods require exact state
+          measurements in order to enforce safety and liveness e.g.
+          via control barrier functions (CBFs), which is challenging to
+          achieve directly from onboard sensors like lidars and cameras.
+          This work introduces LIVEPOINT, a decentralized control
+          framework that synthesizes universal CBFs over point clouds
+          to enable safe, deadlock-free real-time multi-robot navigation in
+          dynamic, cluttered environments. Further, LIVEPOINT ensures
+          minimally invasive deadlock avoidance behavior by dynamically
+          adjusting agents’ speeds based on a novel symmetric interaction
+          metric. We validate our approach in simulation experiments
+          across highly constrained multi-robot scenarios like doorways and intersections. Results demonstrate that LIVEPOINT
+          achieves zero collisions or deadlocks and a 100% success rate in
+          challenging settings compared to optimization-based baselines
+          such as MPC and ORCA and neural methods such as MPNet,
+          which fail in such environments. Despite prioritizing safety
+          and liveness, LIVEPOINT is 35% smoother than baselines in
+          the doorway environment, and maintains agility in constrained
+          environments while still being safe and deadlock-free.</a>.
+      </p>
+    </div>
+  </div>
+</div>
+<!--/ Abstract. -->
+
+<!-- Image Section -->
+<section class="hero">
+    <div class="container is-max-desktop">
+  <!-- <div class="image-grid">
+    <div class="image-container"> -->
+        <img src="static/images/dcbf_website.png" alt="Image 1" width="750" style="display: block; margin: 0 auto;">
+        <p class="image-title">Distances between each agent and the closest static obstacle,
+            as well as the inter-agent distance, plotted over time. The CBF
+            boundary is included to indicate the safety threshold for maintaining
+            safe navigation.</p>
+    <!-- </div> -->
+     <br>
+    <!-- <div class="image-container"> -->
+        <img src="static/images/lcbf_website.png" alt="Image 2" width="750" style="display: block; margin: 0 auto;">
+        <p class="image-title">Liveness values computed at each time step, with liveness
+            threshold and CBF boundary overlaid. Velocity perturbation is
+            performed when liveness value falls below the liveness threshold.</p>
+     <br>
+        <img src="static/images/velocityprof_website.png" alt="Image 3" width="750" style="display: block; margin: 0 auto;">
+        <p class="image-title">Velocity profiles of both robots using LIVEPOINT frame-
+            work, shown before and after navigating through a doorway and an
+            intersection, highlighting the velocity adjustments made to ensure
+            safe and deadlock-free passage.</p>
+
+      <br>
+<!--         <img src="static/images/th1.png" alt="Th1" width="650" style="display: block; margin: 0 auto;">  
+      <br>
+        <img src="static/images/th2.png" alt="Th2" width="650" style="display: block; margin: 0 auto;">  
+      <br>
+        <img src="static/images/th3.png" alt="Th3" width="650" style="display: block; margin: 0 auto;">  
+      <br> -->
+
+    <!-- </div> -->
+    <!-- Add more images as needed -->
+  <!-- </div> -->
+</div>
+
+<br><br>
+
+
+<!-- <section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2>
+<pre><code>@article{chen2025livepoint,
+  title={LiveNet: Robust, Minimally Invasive Multi-Robot Control for Safe and Live Navigation in Constrained Environments},
+  year={2025}
+}
+</code></pre>
+</div>
+</section> -->
+
+
+<footer class="footer">
+<div class="container">
+<!-- <div class="content has-text-centered">
+  <a class="icon-link"
+     href="REMOVED: link to paper here">
+    <i class="fas fa-file-pdf"></i>
+  </a>
+  <a class="icon-link" href="REMOVED: link to code here" class="external-link" disabled>
+    <i class="fab fa-github"></i>
+  </a>
+</div> -->
+<div class="columns is-centered">
+  <div class="column is-8">
+    <div class="content">
+      <p>
+        This website is licensed under a <a rel="license"
+                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        This means you are free to borrow the <a
+          href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website,
+        we just ask that you link back to this page in the footer.
+        Please remember to remove the analytics code included in the header of the website which
+        you do not want on your website.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
