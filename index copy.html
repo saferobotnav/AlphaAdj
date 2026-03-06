@@ -90,59 +90,32 @@
 </section>
 
 <section class="hero">
-  <div class="container is-max-desktop">
-    <div class="video-grid">
+    <div class="container is-max-desktop">
+        <div class="video-grid">
 
-      <!-- Our Approach Videos (1x4, larger) -->
-      <div class="ours-videos">
-        <div class="video-container ours">
-          <video src="static/videos/alpha_adj/warehouse_frontal_ours.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Frontal Obstacle</p>
+            <!-- Baseline Videos (2x5 Grid) -->
+            <div class="baseline-videos">
+                <div class="video-container"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted></video><p>ORCA Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/mpc_robot_trajectory.mp4" controls autoplay loop muted></video><p>MPC-CBF Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/mpnet_robot_trajectory.mp4" controls autoplay loop muted></video><p>MP-Net Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/single_robot_trajectory.mp4" controls autoplay loop muted></video><p>Single Agent Doorway</p></div>
+                <div class="video-container"><video src="static/videos/doorway/lol_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint w/o Liveness Doorway</p></div>
+                <div class="video-container"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted></video><p>ORCA Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/mpc_robot_trajectory.mp4" controls autoplay loop muted></video><p>MPC-CBF Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/mpnet_robot_trajectory.mp4" controls autoplay loop muted></video><p>MP-Net Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/single_robot_trajectory.mp4" controls autoplay loop muted></video><p>Single Agent Intersection</p></div>
+                <div class="video-container"><video src="static/videos/intersection/lol_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint w/o Liveness Intersection</p></div>
+            </div>
+
+            <!-- LivePoint Videos (1x2 Grid, Larger) -->
+            <div class="livepoint-videos">
+                <div class="video-container livepoint"><video src="static/videos/doorway/livepoint_doorway_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint Doorway</p></div>
+                <div class="video-container livepoint"><video src="static/videos/intersection/livepoint_robot_trajectory.mp4" controls autoplay loop muted></video><p>LivePoint Intersection</p></div>
+            </div>
+
         </div>
-
-        <div class="video-container ours">
-          <video src="static/videos/alpha_adj/warehouse_cluttered_ours.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Cluttered Field</p>
-        </div>
-
-        <!-- Repeats for layout testing -->
-        <div class="video-container ours">
-          <video src="static/videos/alpha_adj/warehouse_dynamic_obstacle_ours.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Dynamic Obstacles</p>
-        </div>
-
-        <div class="video-container ours">
-          <video src="static/videos/alpha_adj/warehouse_dynamic_frontal_obstacle_ours.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Dynamic Frontal</p>
-        </div>
-      </div>
-
-      <!-- Baseline Videos (3x4, smaller) -->
-      <div class="baseline-videos">
-        <!-- 10 originals -->
-        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Frontal</p></div>
-        
-        <div class="video-container baseline"><video src="static/videos/doorway/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Frontal</p></div>
-
-        <div class="video-container baseline"><video src="static/videos/intersection/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Frontal</p></div>
-      </div>
-
     </div>
-  </div>
 </section>
-
-<script>
-  document.querySelectorAll('video').forEach(v => { v.playbackRate = 1.0; });
-</script>
 
 <script>
     document.querySelectorAll('video').forEach(video => {
@@ -159,7 +132,7 @@
     <h2 class="title is-3">Abstract</h2>
     <div class="content has-text-justified">
       <p>
-          Robots operating in dynamic, unstructured environments must balance safety and efficiency under potentially limited sensing. While control barrier functions (CBFs) provide principled collision avoidance via safety filtering, their behavior is often governed by fixed parameters that can be overly conservative in benign scenes or overly permissive near hazards. We present AlphaAdj, a vision-to-control navigation framework that uses egocentric RGB input to adapt the conservativeness of a CBF safety filter in real time. A vision-language model (VLM) produces a bounded scalar risk estimate from the current camera view, which we map to dynamically update a CBF parameter that modulates how strongly safety constraints are enforced. To address asynchronous inference and non-trivial VLM latency in practice, we combine a geometric, speed-aware dynamic cap and a staleness-gated fusion policy with lightweight implementation choices that reduce end-to-end inference overhead. We evaluate AlphaAdj across multiple static and dynamic obstacle scenarios in a variety of environments, comparing against fixed-parameter and uncapped ablations. Results show that AlphaAdj maintains collision-free navigation while improving efficiency (in terms of path length and time to goal) by up to 18.5% relative to fixed settings and improving robustness and success rate relative to an uncapped baseline.</a>
+          Robots operating in dynamic, unstructured environments must balance safety and efficiency under potentially limited sensing. While control barrier functions (CBFs) provide principled collision avoidance via safety filtering, their behavior is often governed by fixed parameters that can be overly conservative in benign scenes or overly permissive near hazards. We present AlphaAdj, a vision-to-control navigation framework that uses egocentric RGB input to adapt the conservativeness of a CBF safety filter in real time. A vision-language model (VLM) produces a bounded scalar risk estimate from the current camera view, which we map to dynamically update a CBF parameter that modulates how strongly safety constraints are enforced. To address asynchronous inference and non-trivial VLM latency in practice, we combine a geometric, speed-aware dynamic cap and a staleness-gated fusion policy with lightweight implementation choices that reduce end-to-end inference overhead. We evaluate AlphaAdj across multiple static and dynamic obstacle scenarios in a variety of environments, comparing against fixed-parameter and uncapped ablations. Results show that AlphaAdj maintains collision-free navigation while improving efficiency (in terms of path length and time to goal) by up to 18.5\% relative to fixed settings and improving robustness and success rate relative to an uncapped baseline.</a>
       </p>
     </div>
   </div>
