@@ -2,26 +2,26 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the grids */
-    gap: 20px; /* Space between baseline and LivePoint videos */
+    gap: 20px; /* Space between ours and baseline grids */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Baseline videos: 2x5 grid */
-.baseline-videos {
+/* Our approach videos: 1x4 grid (larger) */
+.ours-videos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 10px; /* Space between videos */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
     width: 100%;
     justify-content: center;
 }
 
-/* LivePoint videos: 1x2 grid, larger size */
-.livepoint-videos {
+/* Baseline videos: 3x4 grid (smaller) */
+.baseline-videos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 20px;
-    width: 80%;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Space between videos */
+    width: 100%;
     justify-content: center;
 }
 
@@ -30,7 +30,7 @@
     text-align: center;
 }
 
-/* Standard size for baseline videos */
+/* Standard size for baseline videos (default) */
 .video-container video {
     width: 200px;
     height: 150px;
@@ -40,8 +40,8 @@
     background: #000;
 }
 
-/* Larger size for LivePoint videos */
-.livepoint video {
+/* Larger size for our approach videos */
+.video-container.ours video {
     width: 300px; /* Increase size */
     height: 225px;
     border: 3px solid #444; /* Slightly darker border for emphasis */
@@ -53,4 +53,32 @@
     font-size: 14px;
     color: #333;
     font-weight: bold;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+    .ours-videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .baseline-videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ours-videos,
+    .baseline-videos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Make videos fluid on small screens */
+    .video-container video {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-container.ours video {
+        width: 100%;
+        height: auto;
+    }
 }
