@@ -7,10 +7,10 @@
     margin: 0 auto;
 }
 
-/* Our approach videos: 2x2 grid (larger, fills width) */
+/* Our approach videos: 1x4 grid (larger) */
 .ours-videos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns -> 2x2 */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
     gap: 20px;
     width: 100%;
     justify-content: center;
@@ -40,10 +40,10 @@
     background: #000;
 }
 
-/* Larger size for our approach videos (bigger than before) */
+/* Larger size for our approach videos */
 .video-container.ours video {
-    width: 520px;   /* big, but still fits 2 columns inside 1200px */
-    height: 390px;
+    width: 300px; /* Increase size */
+    height: 225px;
     border: 3px solid #444; /* Slightly darker border for emphasis */
 }
 
@@ -57,25 +57,11 @@
 
 /* Responsive behavior */
 @media (max-width: 1024px) {
-    /* Keep ours 2 columns a bit longer, but allow it to drop if needed */
     .ours-videos {
         grid-template-columns: repeat(2, 1fr);
     }
     .baseline-videos {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Make baseline videos scale a bit */
-    .video-container video {
-        width: 100%;
-        max-width: 260px;
-        height: auto;
-    }
-
-    .video-container.ours video {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
     }
 }
 
@@ -86,7 +72,11 @@
     }
 
     /* Make videos fluid on small screens */
-    .video-container video,
+    .video-container video {
+        width: 100%;
+        height: auto;
+    }
+
     .video-container.ours video {
         width: 100%;
         height: auto;
