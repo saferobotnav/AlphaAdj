@@ -97,44 +97,43 @@
       <div class="ours-videos">
         <div class="video-container ours">
           <video src="static/videos/doorway/livepoint_doorway_trajectory.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Doorway</p>
+          <p>AlphaAdj Frontal Obstacle</p>
         </div>
 
         <div class="video-container ours">
           <video src="static/videos/intersection/livepoint_robot_trajectory.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Intersection</p>
+          <p>AlphaAdj Cluttered Field</p>
         </div>
 
         <!-- Repeats for layout testing -->
         <div class="video-container ours">
           <video src="static/videos/doorway/livepoint_doorway_trajectory.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Doorway (repeat)</p>
+          <p>AlphaAdj Dynamic Obstacles</p>
         </div>
 
         <div class="video-container ours">
           <video src="static/videos/intersection/livepoint_robot_trajectory.mp4" controls autoplay loop muted playsinline></video>
-          <p>AlphaAdj Intersection (repeat)</p>
+          <p>AlphaAdj Dynamic Frontal</p>
         </div>
       </div>
 
       <!-- Baseline Videos (3x4, smaller) -->
       <div class="baseline-videos">
         <!-- 10 originals -->
-        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>ORCA Doorway</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>MPC-CBF Doorway</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>MP-Net Doorway</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Single Agent Doorway</p></div>
-        <div class="video-container baseline"><video src="static/videos/doorway/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>LivePoint w/o Liveness Doorway</p></div>
+        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Frontal Obstacle</p></div>
+        <div class="video-container baseline"><video src="static/videos/doorway/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Cluttered Field</p></div>
+        <div class="video-container baseline"><video src="static/videos/doorway/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Obstacles</p></div>
+        <div class="video-container baseline"><video src="static/videos/doorway/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Frontal</p></div>
+        
+        <div class="video-container baseline"><video src="static/videos/doorway/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Frontal Obstacle</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Cluttered Field</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Obstacles</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Frontal</p></div>
 
-        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>ORCA Intersection</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/mpc_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>MPC-CBF Intersection</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/mpnet_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>MP-Net Intersection</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Single Agent Intersection</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>LivePoint w/o Liveness Intersection</p></div>
-
-        <!-- 2 repeats to make 12 total (fills 3x4) -->
-        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>ORCA Doorway (repeat)</p></div>
-        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>ORCA Intersection (repeat)</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/single_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Frontal Obstacle</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/lol_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Cluttered Field</p></div>
+        <div class="video-container baseline"><video src="static/videos/doorway/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Obstacles</p></div>
+        <div class="video-container baseline"><video src="static/videos/intersection/orca_robot_trajectory.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Frontal</p></div>
       </div>
 
     </div>
