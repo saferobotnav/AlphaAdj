@@ -1,10 +1,10 @@
 <p align="center">
 
-  <h2 align="center">LivePoint: Vision-Based, Fully Decentralized, Safe, Deadlock-Free Multi-Robot Control in Social Mini-Games via Depth Sensor Input</h2>
+  <h2 align="center">Dynamic Control Barrier Function Regulation with Vision-Language Models for Safe, Adaptive, and Realtime Visual Navigation</h2>
 
 
 <p align="center">
-    For MRS 2025 Submission
+    For IROS 2026 Submission
 </p>
    <h3 align="center">
 
