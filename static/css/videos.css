@@ -7,7 +7,6 @@
     margin: 0 auto;
 }
 
-/* AlphaAdj row: 4 videos across */
 .video-grid .ours-videos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -16,7 +15,6 @@
     justify-content: center;
 }
 
-/* Baseline rows: also 4 videos across */
 .video-grid .baseline-videos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -25,46 +23,20 @@
     justify-content: center;
 }
 
-/* General container */
 .video-container {
     text-align: center;
     width: 100%;
+    min-width: 0;
 }
 
-/* All videos same size */
-/* .video-container video {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: #000;
-    display: block;
-} */
-
-/* .video-container video {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: #000;
-    display: block;
-} */
-
 .video-container video {
+    display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    border: 2px solid #ddd;
+    max-width: 100%;
+    background: #000;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: #000;
-    display: block;
 }
 
 /* AlphaAdj boxes bolded */
@@ -77,7 +49,6 @@
     border: 2px solid #ddd;
 }
 
-/* Default captions */
 .video-container p {
     margin-top: 5px;
     font-size: 14px;
@@ -85,12 +56,10 @@
     font-weight: 400;
 }
 
-/* Only AlphaAdj captions bold */
 .video-container.ours p {
     font-weight: 700;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .video-grid .ours-videos,
     .video-grid .baseline-videos {

@@ -205,7 +205,25 @@
 
 <br><br>
 
+<script>
+  document.querySelectorAll('.video-grid video').forEach(video => {
+    video.playbackRate = 1.0;
 
+    const applyNaturalRatio = () => {
+      if (video.videoWidth && video.videoHeight) {
+        video.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`;
+        video.style.width = '100%';
+        video.style.height = 'auto';
+      }
+    };
+
+    if (video.readyState >= 1) {
+      applyNaturalRatio();
+    } else {
+      video.addEventListener('loadedmetadata', applyNaturalRatio);
+    }
+  });
+</script>
 <!-- <section class="section" id="BibTeX">
 <div class="container is-max-desktop content">
 <h2 class="title">BibTeX</h2>
