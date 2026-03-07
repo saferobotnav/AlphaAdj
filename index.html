@@ -42,46 +42,23 @@
 
 <section class="hero">
     <div class="hero-body">
-      <!-- <div class="container is-max-desktop"> -->
-      <div class="container is-max-fullhd">
+      <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Dynamic Control Barrier Function Regulation with Vision-Language Models for Safe, Adaptive, and Realtime Visual Navigation</h1>
-            <!-- <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="Link Here">REMOVED--Name Here</a>,</span>
-              <span class="author-block">
-                <a href="Link Here">REMOVED--Name Here</a>
-              </span>
-            </div> -->
-            <!-- <div class="is-size-5 publication-authors">
-              <span class="author-block">REMOVED--University Name Here</span>
-            </div> -->
 
             <!-- Links -->
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- <span class="link-block">
+                <!--
+                <span class="link-block">
                   <a href="REMOVED--Publication Link Here"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                     <span>Paper</span>
                   </a>
-                </span> -->
-                <!-- <span class="link-block">
-                  <a href="REMOVED--Publication Link Here"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span> -->
-                <!-- <span class="link-block">
-                  <a href="https://github.com/saferobotnav/livepoint-code-mrs2025"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code</span>
-                  </a>
-                </span> -->
+                </span>
+                -->
               </div>
             </div>
           </div>
@@ -91,10 +68,10 @@
 </section>
 
 <section class="hero">
-  <div class="container is-max-desktop">
+  <div class="video-page-wrap">
     <div class="video-grid">
 
-      <!-- Our Approach Videos (1x4, larger) -->
+      <!-- AlphaAdj row -->
       <div class="ours-videos">
         <div class="video-container ours">
           <video src="static/videos/alpha_adj/warehouse_frontal_ours.mp4" controls autoplay loop muted playsinline></video>
@@ -106,7 +83,6 @@
           <p>AlphaAdj Cluttered Field</p>
         </div>
 
-        <!-- Repeats for layout testing -->
         <div class="video-container ours">
           <video src="static/videos/alpha_adj/warehouse_dynamic_obstacle_ours.mp4" controls autoplay loop muted playsinline></video>
           <p>AlphaAdj Dynamic Obstacles</p>
@@ -118,23 +94,58 @@
         </div>
       </div>
 
-      <!-- Baseline Videos (3x4, smaller) -->
+      <!-- Baselines -->
       <div class="baseline-videos">
-        <!-- 10 originals -->
-        <div class="video-container baseline"><video src="static/videos/no_cap/warehouse_frontal_no_cap.mp4" controls autoplay loop muted playsinline></video><p>No Cap Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/no_cap/warehouse_cluttered_no_cap.mp4" controls autoplay loop muted playsinline></video><p>No Cap Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/no_cap/warehouse_dynamic_obstacle_no_cap.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/no_cap/warehouse_dynamic_frontal_obstacle_no_cap.mp4" controls autoplay loop muted playsinline></video><p>No Cap Dynamic Frontal</p></div>
-        
-        <div class="video-container baseline"><video src="static/videos/alpha_min/warehouse_frontal_fixed_min.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_min/warehouse_fixed_min.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_min/warehouse_dynamic_obstacle_fixed_min.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_min/warehouse_dynamic_frontal_obstacle_fixed_min.mp4" controls autoplay loop muted playsinline></video><p>Alpha Min Dynamic Frontal</p></div>
+        <div class="video-container baseline">
+          <video src="static/videos/no_cap/warehouse_frontal_no_cap.mp4" controls autoplay loop muted playsinline></video>
+          <p>No Cap Frontal Obstacle</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/no_cap/warehouse_cluttered_no_cap.mp4" controls autoplay loop muted playsinline></video>
+          <p>No Cap Cluttered Field</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/no_cap/warehouse_dynamic_obstacle_no_cap.mp4" controls autoplay loop muted playsinline></video>
+          <p>No Cap Dynamic Obstacles</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/no_cap/warehouse_dynamic_frontal_obstacle_no_cap.mp4" controls autoplay loop muted playsinline></video>
+          <p>No Cap Dynamic Frontal</p>
+        </div>
 
-        <div class="video-container baseline"><video src="static/videos/alpha_max/warehouse_frontal_fixed_max.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Frontal Obstacle</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_max/warehouse_cluttered_fixed_max.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Cluttered Field</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_max/warehouse_dynamic_obstacle_fixed_max.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Obstacles</p></div>
-        <div class="video-container baseline"><video src="static/videos/alpha_max/warehouse_dynamic_frontal_obstacle_fixed_max.mp4" controls autoplay loop muted playsinline></video><p>Alpha Max Dynamic Frontal</p></div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_min/warehouse_frontal_fixed_min.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Min Frontal Obstacle</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_min/warehouse_fixed_min.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Min Cluttered Field</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_min/warehouse_dynamic_obstacle_fixed_min.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Min Dynamic Obstacles</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_min/warehouse_dynamic_frontal_obstacle_fixed_min.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Min Dynamic Frontal</p>
+        </div>
+
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_max/warehouse_frontal_fixed_max.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Max Frontal Obstacle</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_max/warehouse_cluttered_fixed_max.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Max Cluttered Field</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_max/warehouse_dynamic_obstacle_fixed_max.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Max Dynamic Obstacles</p>
+        </div>
+        <div class="video-container baseline">
+          <video src="static/videos/alpha_max/warehouse_dynamic_frontal_obstacle_fixed_max.mp4" controls autoplay loop muted playsinline></video>
+          <p>Alpha Max Dynamic Frontal</p>
+        </div>
       </div>
 
     </div>
@@ -142,94 +153,36 @@
 </section>
 
 <script>
-  document.querySelectorAll('video').forEach(v => { v.playbackRate = 1.0; });
+  document.querySelectorAll('video').forEach(video => {
+    video.playbackRate = 1.0;
+  });
 </script>
-
-<script>
-    document.querySelectorAll('video').forEach(video => {
-        video.playbackRate = 1.0;
-    });
-</script>
-
 
 <br><br>
-    
+
 <!-- Abstract. -->
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
     <h2 class="title is-3">Abstract</h2>
     <div class="content has-text-justified">
       <p>
-          Robots operating in dynamic, unstructured environments must balance safety and efficiency under potentially limited sensing. While control barrier functions (CBFs) provide principled collision avoidance via safety filtering, their behavior is often governed by fixed parameters that can be overly conservative in benign scenes or overly permissive near hazards. We present AlphaAdj, a vision-to-control navigation framework that uses egocentric RGB input to adapt the conservativeness of a CBF safety filter in real time. A vision-language model (VLM) produces a bounded scalar risk estimate from the current camera view, which we map to dynamically update a CBF parameter that modulates how strongly safety constraints are enforced. To address asynchronous inference and non-trivial VLM latency in practice, we combine a geometric, speed-aware dynamic cap and a staleness-gated fusion policy with lightweight implementation choices that reduce end-to-end inference overhead. We evaluate AlphaAdj across multiple static and dynamic obstacle scenarios in a variety of environments, comparing against fixed-parameter and uncapped ablations. Results show that AlphaAdj maintains collision-free navigation while improving efficiency (in terms of path length and time to goal) by up to 18.5% relative to fixed settings and improving robustness and success rate relative to an uncapped baseline.</a>
+          Robots operating in dynamic, unstructured environments must balance safety and efficiency under potentially limited sensing. While control barrier functions (CBFs) provide principled collision avoidance via safety filtering, their behavior is often governed by fixed parameters that can be overly conservative in benign scenes or overly permissive near hazards. We present AlphaAdj, a vision-to-control navigation framework that uses egocentric RGB input to adapt the conservativeness of a CBF safety filter in real time. A vision-language model (VLM) produces a bounded scalar risk estimate from the current camera view, which we map to dynamically update a CBF parameter that modulates how strongly safety constraints are enforced. To address asynchronous inference and non-trivial VLM latency in practice, we combine a geometric, speed-aware dynamic cap and a staleness-gated fusion policy with lightweight implementation choices that reduce end-to-end inference overhead. We evaluate AlphaAdj across multiple static and dynamic obstacle scenarios in a variety of environments, comparing against fixed-parameter and uncapped ablations. Results show that AlphaAdj maintains collision-free navigation while improving efficiency (in terms of path length and time to goal) by up to 18.5% relative to fixed settings and improving robustness and success rate relative to an uncapped baseline.
       </p>
     </div>
   </div>
 </div>
 <!--/ Abstract. -->
 
-<!-- Image Section -->
 <section class="hero">
-    <div class="container is-max-desktop">
-  <!-- <div class="image-grid">
-    <div class="image-container"> -->
-        <!-- <img src="static/images/dcbf_website.png" alt="Image 1" width="750" style="display: block; margin: 0 auto;">
-        <p class="image-title">Toy Environment: Baseline comparisons across scenarios (AlphaAdj, no cap ) Distances between each agent and the closest static obstacle,
-            as well as the inter-agent distance, plotted over time. The CBF
-            boundary is included to indicate the safety threshold for maintaining
-            safe navigation.</p> -->
-    <!-- </div> -->
-     <!-- <br> -->
-    <!-- <div class="image-container"> -->
-        <!-- <img src="static/images/lcbf_website.png" alt="Image 2" width="750" style="display: block; margin: 0 auto;">
-        <p class="image-title">Liveness values computed at each time step, with liveness
-            threshold and CBF boundary overlaid. Velocity perturbation is
-            performed when liveness value falls below the liveness threshold.</p> -->
-     <!-- <br> -->
-        <!-- <img src="static/images/velocityprof_website.png" alt="Image 3" width="750" style="display: block; margin: 0 auto;">
-        <p class="image-title">Velocity profiles of both robots using LIVEPOINT frame-
-            work, shown before and after navigating through a doorway and an
-            intersection, highlighting the velocity adjustments made to ensure
-            safe and deadlock-free passage.</p> -->
-
-      <!-- <br> -->
-<!--         <img src="static/images/th1.png" alt="Th1" width="650" style="display: block; margin: 0 auto;">  
-      <br>
-        <img src="static/images/th2.png" alt="Th2" width="650" style="display: block; margin: 0 auto;">  
-      <br>
-        <img src="static/images/th3.png" alt="Th3" width="650" style="display: block; margin: 0 auto;">  
-      <br> -->
-
-    <!-- </div> -->
-    <!-- Add more images as needed -->
-  <!-- </div> -->
-</div>
+  <div class="container is-max-desktop">
+    <!-- Optional future image section -->
+  </div>
+</section>
 
 <br><br>
 
-
-<!-- <section class="section" id="BibTeX">
-<div class="container is-max-desktop content">
-<h2 class="title">BibTeX</h2>
-<pre><code>@article{chen2025livepoint,
-  title={LiveNet: Robust, Minimally Invasive Multi-Robot Control for Safe and Live Navigation in Constrained Environments},
-  year={2025}
-}
-</code></pre>
-</div>
-</section> -->
-
-
 <footer class="footer">
 <div class="container">
-<!-- <div class="content has-text-centered">
-  <a class="icon-link"
-     href="REMOVED: link to paper here">
-    <i class="fas fa-file-pdf"></i>
-  </a>
-  <a class="icon-link" href="REMOVED: link to code here" class="external-link" disabled>
-    <i class="fab fa-github"></i>
-  </a>
-</div> -->
 <div class="columns is-centered">
   <div class="column is-8">
     <div class="content">

@@ -1,43 +1,35 @@
-.video-page-wrap {
-    width: min(96vw, 1900px);
-    margin: 0 auto;
-    padding: 0 12px;
-    box-sizing: border-box;
-}
-
 .video-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
+    /* max-width: 1200px; */
+    max-width: 1600px;    
     margin: 0 auto;
 }
 
-/* AlphaAdj row: 4 across */
 .video-grid .ours-videos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 10px;
     width: 100%;
+    justify-content: center;
 }
 
-/* Baselines: 4 across */
 .video-grid .baseline-videos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 10px;
     width: 100%;
+    justify-content: center;
 }
 
-/* General container */
 .video-container {
     text-align: center;
     width: 100%;
     min-width: 0;
 }
 
-/* Let video keep its true shape */
 .video-container video {
     display: block;
     width: 100%;
@@ -58,40 +50,25 @@
     border: 2px solid #ddd;
 }
 
-/* Default captions */
 .video-container p {
-    margin-top: 6px;
+    margin-top: 5px;
     font-size: 14px;
     color: #333;
     font-weight: 400;
-    line-height: 1.25;
 }
 
-/* Only AlphaAdj captions bold */
 .video-container.ours p {
     font-weight: 700;
 }
 
-/* Tablet */
-@media (max-width: 1100px) {
-    .video-page-wrap {
-        width: min(98vw, 1600px);
-        padding: 0 10px;
-    }
-
+@media (max-width: 900px) {
     .video-grid .ours-videos,
     .video-grid .baseline-videos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-    .video-page-wrap {
-        width: 100vw;
-        padding: 0 8px;
-    }
-
     .video-grid .ours-videos,
     .video-grid .baseline-videos {
         grid-template-columns: 1fr;
