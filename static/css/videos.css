@@ -1,30 +1,39 @@
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the grids */
+    gap: 20px; /* Space between ours and baseline grids */
+    max-width: 1200px;
     margin: 0 auto;
-    align-items: start;
 }
 
-/* Flatten the two wrappers so all video-container divs participate
-   in one shared 4-column grid */
-.video-grid .ours-videos,
+/* ===== OURS: force 2x2 ===== */
+.video-grid .ours-videos {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* 2 columns -> 2x2 */
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* ===== BASELINES: 3x4 (4 columns) ===== */
 .video-grid .baseline-videos {
-    display: contents;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 /* General video container styling */
 .video-container {
     text-align: center;
-    width: 100%;
 }
 
-/* Make every video tile the same size */
+/* Make videos fill their grid cells by default */
 .video-container video {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    height: auto;
     border: 2px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -32,32 +41,40 @@
     display: block;
 }
 
-/* Remove the larger/special styling for ours */
-.video-container.ours video,
+/* Bigger size for OUR videos (fill 2 columns nicely) */
+.video-container.ours video {
+    border: 3px solid #444;
+    aspect-ratio: 4 / 3;    /* keeps a consistent tile shape */
+    object-fit: cover;      /* crop edges slightly instead of squishing */
+}
+
+/* Smaller baseline tiles */
 .video-container.baseline video {
-    width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
-/* Video titles */
+/* Video titles (your HTML is just <p>..., so target that) */
 .video-container p {
-    margin-top: 6px;
+    margin-top: 5px;
     font-size: 14px;
     color: #333;
     font-weight: bold;
-    line-height: 1.2;
 }
 
 /* Responsive behavior */
 @media (max-width: 1024px) {
-    .video-grid {
+    .video-grid .ours-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .video-grid .baseline-videos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 600px) {
-    .video-grid {
-        grid-template-columns: 1fr;
+    .video-grid .ours-videos,
+    .video-grid .baseline-videos {
+        grid-template-columns: 1fr !important;
     }
 }

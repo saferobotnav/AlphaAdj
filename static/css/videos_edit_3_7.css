@@ -1,0 +1,63 @@
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* Flatten the two wrappers so all video-container divs participate
+   in one shared 4-column grid */
+.video-grid .ours-videos,
+.video-grid .baseline-videos {
+    display: contents;
+}
+
+/* General video container styling */
+.video-container {
+    text-align: center;
+    width: 100%;
+}
+
+/* Make every video tile the same size */
+.video-container video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000;
+    display: block;
+}
+
+/* Remove the larger/special styling for ours */
+.video-container.ours video,
+.video-container.baseline video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Video titles */
+.video-container p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
