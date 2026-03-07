@@ -1,17 +1,28 @@
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    align-items: start;
 }
 
-/* Flatten the two wrappers so all video-container divs participate
-   in one shared 4-column grid */
-.video-grid .ours-videos,
+/* AlphaAdj row: 1x4 */
+.video-grid .ours-videos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Baselines: also 4 columns */
 .video-grid .baseline-videos {
-    display: contents;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 /* General video container styling */
@@ -20,7 +31,7 @@
     width: 100%;
 }
 
-/* Make every video tile the same size */
+/* Same size for all videos */
 .video-container video {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -32,7 +43,7 @@
     display: block;
 }
 
-/* Remove the larger/special styling for ours */
+/* Remove special larger sizing for AlphaAdj */
 .video-container.ours video,
 .video-container.baseline video {
     width: 100%;
@@ -40,24 +51,31 @@
     object-fit: cover;
 }
 
-/* Video titles */
+/* Default caption styling */
 .video-container p {
     margin-top: 6px;
     font-size: 14px;
     color: #333;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 1.2;
 }
 
-/* Responsive behavior */
+/* Only AlphaAdj captions are bolded */
+.video-container.ours p {
+    font-weight: 800;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-    .video-grid {
+    .video-grid .ours-videos,
+    .video-grid .baseline-videos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 600px) {
-    .video-grid {
+    .video-grid .ours-videos,
+    .video-grid .baseline-videos {
         grid-template-columns: 1fr;
     }
 }
