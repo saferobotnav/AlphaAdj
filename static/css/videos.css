@@ -1,6 +1,5 @@
 .video-page-wrap {
-    /* width: min(96vw, 1900px); */
-    width: min(60vw, 1250px);
+    width: min(96vw, 1900px);
     margin: 0 auto;
     padding: 0 12px;
     box-sizing: border-box;
@@ -11,7 +10,8 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
+    /* width: 100%; */
+    width: 80%;
     margin: 0 auto;
 }
 
