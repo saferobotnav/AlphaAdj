@@ -1,0 +1,80 @@
+.video-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the grids */
+    gap: 20px; /* Space between ours and baseline grids */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== OURS: force 2x2 ===== */
+.video-grid .ours-videos {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* 2 columns -> 2x2 */
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* ===== BASELINES: 3x4 (4 columns) ===== */
+.video-grid .baseline-videos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* General video container styling */
+.video-container {
+    text-align: center;
+}
+
+/* Make videos fill their grid cells by default */
+.video-container video {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #000;
+    display: block;
+}
+
+/* Bigger size for OUR videos (fill 2 columns nicely) */
+.video-container.ours video {
+    border: 3px solid #444;
+    aspect-ratio: 4 / 3;    /* keeps a consistent tile shape */
+    object-fit: cover;      /* crop edges slightly instead of squishing */
+}
+
+/* Smaller baseline tiles */
+.video-container.baseline video {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Video titles (your HTML is just <p>..., so target that) */
+.video-container p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+    .video-grid .ours-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .video-grid .baseline-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .video-grid .ours-videos,
+    .video-grid .baseline-videos {
+        grid-template-columns: 1fr !important;
+    }
+}
