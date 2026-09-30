@@ -1,285 +1,385 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description"
-        content="Dynamic Control Barrier Function Regulation with Vision-Language Models for Safe, Adaptive, and Realtime Visual Navigation">
-    <meta name="keywords" content="VLMs, CBFs, Visual Navigation, Control">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AlphaAdj</title>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-PYVRSFMDRL');
-    </script>
-
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-    <link rel="stylesheet" href="./static/css/videos.css">
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/ai.svg">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaAdj</title>
+  <meta name="description" content="AlphaAdj: Semantically Adaptive Control Barrier Functions with Vision-Language Models for Real-Time Robot Navigation.">
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="./static/css/site.css">
 </head>
 <body>
 
+<!-- ============ HERO ============ -->
 <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Dynamic Control Barrier Function Regulation with Vision-Language Models for Safe, Adaptive, and Realtime Visual Navigation</h1>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!--
-                <span class="link-block">
-                  <a href="REMOVED--Publication Link Here"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="wrap">
+    <h1>Semantically Adaptive Control Barrier Functions with Vision-Language Models for Real-Time Robot Navigation</h1>
+    <div class="byline">Anonymous Author(s)</div>
+    <p class="tagline">
+      A vision-language model reads the robot's camera view and adjusts how
+      cautious its safety controller is, without blocking the control loop.
+    </p>
+  </div>
 </section>
 
-<section class="section">
-  <div class="columns is-centered">
-    <div class="column is-four-fifths">
-      <div class="video-grid">
+<!-- ============ MAIN VIDEO ============ -->
+<section>
+  <div class="wrap">
+    <div class="frame hero-video">
+      <video controls muted playsinline preload="metadata"
+             src="./static/videos/AlphaAdj_supplement_final_black_intro.mp4">
+      </video>
+    </div>
+    <p class="caption">Simulation and physical Clearpath Jackal results for AlphaAdj.</p>
+  </div>
+</section>
 
-        <div class="ours-videos">
-          <div class="video-container ours">
-            <video src="static/videos/alpha_adj/warehouse_frontal_ours.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>AlphaAdj Frontal Obstacle</p>
-          </div>
+<!-- ============ ABSTRACT ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head" style="max-width:760px;">
+      <div class="eyebrow">Overview</div>
+      <h2>Abstract</h2>
+      <p style="text-align:left;">
+        Robots operating in dynamic, unstructured environments must maintain
+        safety without becoming unnecessarily conservative. While control
+        barrier functions (CBFs) provide a principled mechanism for
+        collision avoidance, their behavior is typically determined from
+        geometric state alone and therefore cannot distinguish between
+        semantically different situations with similar physical
+        configurations. We present AlphaAdj, a vision-to-control navigation
+        framework that uses egocentric RGB observations and a
+        vision-language model (VLM) to adapt CBF conservativeness according
+        to visual semantic context. The VLM produces a scalar contextual
+        caution signal that dynamically modulates the CBF parameter
+        &alpha;, while a geometry- and speed-dependent cap bounds admissible
+        aggressiveness. To support real-time operation despite VLM latency,
+        inference runs asynchronously with the control loop, and the
+        semantic signal is extracted directly from token-level output
+        probabilities rather than full autoregressive text generation. We
+        evaluate AlphaAdj across matched-geometry, dynamic-human, and
+        cluttered navigation scenarios, as well as on a physical Clearpath
+        Jackal. When obstacle geometry is held fixed, AlphaAdj allocates
+        0.405&nbsp;m more clearance to a human than to a benign object,
+        while geometry-only and non-visual adaptive CBF baselines produce no
+        semantic differentiation. This additional behavioral reserve
+        improves robustness to unexpected human motion, including cluttered
+        conditions in which all evaluated geometric baselines collide while
+        AlphaAdj remains collision-free. The system maintains a 0.0167&nbsp;s
+        control period with 0.158&nbsp;s mean VLM round-trip latency,
+        demonstrating that semantic visual reasoning can complement
+        geometric safety control without entering the critical control
+        path.
+      </p>
+    </div>
+  </div>
+</section>
 
-          <div class="video-container ours">
-            <video src="static/videos/alpha_adj/warehouse_cluttered_ours.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>AlphaAdj Cluttered Field</p>
-          </div>
-
-          <div class="video-container ours">
-            <video src="static/videos/alpha_adj/warehouse_dynamic_obstacle_ours.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>AlphaAdj Dynamic Obstacles</p>
-          </div>
-
-          <div class="video-container ours">
-            <video src="static/videos/alpha_adj/warehouse_dynamic_frontal_obstacle_ours.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>AlphaAdj Dynamic Frontal</p>
-          </div>
-        </div>
-
-        <div class="baseline-videos">
-          <div class="video-container baseline">
-            <video src="static/videos/no_cap/warehouse_frontal_no_cap.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>No Cap Frontal Obstacle</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/no_cap/warehouse_cluttered_no_cap_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>No Cap Cluttered Field</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/no_cap/warehouse_dynamic_obstacle_no_cap.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>No Cap Dynamic Obstacles</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/no_cap/warehouse_dynamic_frontal_obstacle_no_cap.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>No Cap Dynamic Frontal</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_min/warehouse_frontal_fixed_min.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Min Frontal Obstacle</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_min/warehouse_fixed_min.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Min Cluttered Field</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_min/warehouse_dynamic_obstacle_fixed_min_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Min Dynamic Obstacles</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_min/warehouse_dynamic_frontal_obstacle_fixed_min.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Min Dynamic Frontal</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_max/warehouse_frontal_fixed_max_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Max Frontal Obstacle</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_max/warehouse_cluttered_fixed_max_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Max Cluttered Field</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_max/warehouse_dynamic_fixed_max_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Max Dynamic Obstacles</p>
-          </div>
-
-          <div class="video-container baseline">
-            <video src="static/videos/alpha_max/warehouse_dynamic_frontal_edited.mp4" autoplay muted playsinline preload="metadata"></video>
-            <p>Alpha Max Dynamic Frontal</p>
-          </div>
-        </div>
-
+<!-- ============ WHY ALPHAADJ ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why AlphaAdj</div>
+      <h2>Geometry sets the limit. Vision decides how much of it to use.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="mark">1</div>
+        <h3>More caution for people</h3>
+        <p>AlphaAdj gives a person more clearance than a physically
+           identical object in the same spot.</p>
+      </div>
+      <div class="why-card">
+        <div class="mark">2</div>
+        <h3>Caution carries through the maneuver</h3>
+        <p>If a person starts moving after the robot has already assessed
+           the scene, that caution carries into the avoidance instead of
+           resetting.</p>
+      </div>
+      <div class="why-card">
+        <div class="mark">3</div>
+        <h3>Inference doesn't block control</h3>
+        <p>The VLM runs in the background while the 60&nbsp;Hz control loop
+           keeps executing on the most recent valid estimate.</p>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const videos = Array.from(document.querySelectorAll('.video-grid video'));
-  if (!videos.length) return;
-
-  let cycleTimer = null;
-  let maxDuration = 0;
-
-  function waitForMetadata(video) {
-    return new Promise((resolve) => {
-      if (video.readyState >= 1 && isFinite(video.duration) && video.duration > 0) {
-        resolve();
-      } else {
-        video.addEventListener('loadedmetadata', resolve, { once: true });
-      }
-    });
-  }
-
-  function safePlay(video) {
-    const p = video.play();
-    if (p && typeof p.catch === 'function') {
-      p.catch(() => {});
-    }
-  }
-
-  function goToLastFrame(video) {
-    try {
-      if (video.duration && isFinite(video.duration)) {
-        video.currentTime = Math.max(0, video.duration - 0.03);
-      }
-      video.pause();
-    } catch (e) {}
-  }
-
-  function startCycle() {
-    if (cycleTimer) clearTimeout(cycleTimer);
-
-    videos.forEach((video) => {
-      try {
-        video.pause();
-        video.currentTime = 0;
-        video.playbackRate = 1.0;
-        safePlay(video);
-      } catch (e) {}
-    });
-
-    cycleTimer = setTimeout(() => {
-      startCycle();
-    }, maxDuration * 1000);
-  }
-
-  Promise.all(videos.map(waitForMetadata)).then(() => {
-    const durations = videos
-      .map((video) => video.duration)
-      .filter((d) => isFinite(d) && d > 0);
-
-    maxDuration = Math.max(...durations);
-
-    videos.forEach((video) => {
-      video.addEventListener('ended', () => {
-        goToLastFrame(video);
-      });
-    });
-
-    startCycle();
-
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        if (cycleTimer) clearTimeout(cycleTimer);
-        videos.forEach((video) => video.pause());
-      } else {
-        startCycle();
-      }
-    });
-  });
-});
-</script>
-
-<br><br>
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content has-text-justified">
-      <p>
-          Robots operating in dynamic, unstructured environments must balance safety and efficiency under potentially limited sensing. While control barrier functions (CBFs) provide principled collision avoidance via safety filtering, their behavior is often governed by fixed parameters that can be overly conservative in benign scenes or overly permissive near hazards. We present AlphaAdj, a vision-to-control navigation framework that uses egocentric RGB input to adapt the conservativeness of a CBF safety filter in real time. A vision-language model (VLM) produces a bounded scalar risk estimate from the current camera view, which we map to dynamically update a CBF parameter that modulates how strongly safety constraints are enforced. To address asynchronous inference and non-trivial VLM latency in practice, we combine a geometric, speed-aware dynamic cap and a staleness-gated fusion policy with lightweight implementation choices that reduce end-to-end inference overhead. We evaluate AlphaAdj across multiple static and dynamic obstacle scenarios in a variety of environments, comparing against fixed-parameter and uncapped ablations. Results show that AlphaAdj maintains collision-free navigation while improving efficiency (in terms of path length and time to goal) by up to 18.5% relative to fixed settings and improving robustness and success rate relative to an uncapped baseline.
-      </p>
+<!-- ============ METHOD ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Method</div>
+      <h2>From camera frame to control parameter</h2>
+    </div>
+    <div class="flow">
+      <span class="step">RGB observation</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">caution score</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">&alpha;</span>
+      <span class="arrow">&rarr;</span>
+      <span class="step">CBF-QP</span>
+    </div>
+    <div class="figure-block wide">
+      <div class="frame"><img src="./static/images/figures/method_overview.png" alt="AlphaAdj system diagram. Every 5 control steps, an asynchronous branch captures an RGB frame, queries the VLM, and passes the result through a persistence gate to produce the applied caution score. Every control step, a geometric branch observes robot state, computes the geometry and speed cap, and fuses it with the caution score through a stale gate to set alpha for the CBF-QP. A timeline below shows five overlapping VLM calls against a continuously ticking 60 Hz control loop."></div>
+    </div>
+    <p class="caption" style="margin-bottom:0;">
+      Two loops run at different rates. A slow, asynchronous branch turns a
+      camera frame into a caution score every 5 control steps. A fast branch
+      runs every step, computing the geometry and speed cap and fusing it
+      with the latest caution score into &alpha; for the CBF-QP.
+    </p>
+    <div class="note-row">
+      <div class="note">
+        <h4>Persistence gate</h4>
+        <p>The caution score stays tied to whichever obstacle is currently
+           most relevant to the CBF, even if it leaves the camera view
+           during an avoidance maneuver.</p>
+      </div>
+      <div class="note">
+        <h4>Fusion and stale gate</h4>
+        <p>A geometry- and speed-based cap bounds &alpha; at every step. A
+           late or missing VLM result falls back to that cap, so it can
+           never make the robot less safe than geometry alone.</p>
+      </div>
     </div>
   </div>
-</div>
-
-<section class="hero">
-    <div class="container is-max-desktop">
-      <!-- Optional future image/content section -->
-    </div>
 </section>
 
-<br><br>
-
-<footer class="footer">
-<div class="container">
-<div class="columns is-centered">
-  <div class="column is-8">
-    <div class="content">
-      <p>
-        This website is licensed under a <a rel="license"
-                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-        Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
-      <p>
-        This means you are free to borrow the <a
-          href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website,
-        we just ask that you link back to this page in the footer.
-        Please remember to remove the analytics code included in the header of the website which
-        you do not want on your website.
-      </p>
+<!-- ============ RESULTS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Results</div>
+      <h2>Results</h2>
+    </div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="num">+0.405&nbsp;m</div>
+        <div class="label">more clearance for a human than a physically identical object</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">+1.4%</div>
+        <div class="label">path overhead in the matched benign-object case</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">Collision&#8209;free</div>
+        <div class="label">Across the tested dynamic-human trials</div>
+      </div>
+      <div class="metric-card">
+        <div class="num">60&nbsp;Hz</div>
+        <div class="label">control-loop rate, independent of the 0.158&nbsp;s mean VLM round trip</div>
+      </div>
     </div>
   </div>
-</div>
-</div>
+</section>
+
+<!-- ============ MATCHED-GEOMETRY FIGURE ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Matched-geometry test</div>
+      <h2>Same geometry, different clearance</h2>
+      <p>Robot start, goal, and obstacle position stay identical. Only the
+         visible identity of the target changes.</p>
+    </div>
+    <div class="figure-block wide">
+      <div class="frame"><img src="./static/images/figures/matched_geometry.png" alt="Matched-geometry comparison. Geometry-only, OA-CBF, and PACBF produce identical trajectories regardless of target identity. AlphaAdj gives the human more clearance than the object, at a small path cost compared to a globally conservative fixed-alpha controller."></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIMENT VIDEOS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Experiment videos</div>
+      <h2>Recorded runs</h2>
+      <p>Four simulation runs and three physical Clearpath Jackal runs,
+         shown at real relative timing.</p>
+    </div>
+
+    <div class="video-subhead">
+      <span class="pill">Simulation</span>
+      <h3>IsaacSim, Carter differential-drive robot</h3>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/01_static_semantics.mp4"></video></div>
+        <p class="caption">Only the target's identity changes between runs. The person gets more clearance than the box.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/02_moving_human.mp4"></video></div>
+        <p class="caption">A person crosses the robot's path at different speeds. Across part of that range the geometry-only controller collides and AlphaAdj does not.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/03_clean_delayed.mp4"></video></div>
+        <p class="caption">The person starts stationary, then moves without warning once the robot is already navigating. The robot avoids contact.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/04_clutter.mp4"></video></div>
+        <p class="caption">Same unexpected motion, now with added clutter. This is the only method here that avoids contact.</p>
+      </div>
+    </div>
+
+    <div class="video-subhead">
+      <span class="pill">Physical Jackal</span>
+      <h3>Clearpath Jackal, onboard camera</h3>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/05_semantic_jackal_caution_scores.mp4"></video></div>
+        <p class="caption">Onboard the Jackal, the caution score changes as the camera sees different objects and people.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/06_chair_vs_human.mp4"></video></div>
+        <p class="caption">The Jackal gives a wider berth to a person than to a chair in the same spot.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/07_dynamic_human.mp4"></video></div>
+        <p class="caption">The Jackal avoids a person crossing its path.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPLEMENTARY: PROMPT STUDY ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Supplementary material</div>
+      <h2>Prompt formulation</h2>
+      <p>A single prompt produces the caution score. Several phrasings were
+         tested before choosing this one.</p>
+    </div>
+
+    <div class="prompt-card">
+      <div class="prompt-label">Final prompt</div>
+      <p>&ldquo;A mobile robot shares this space with whatever is visible
+         ahead. How strongly should the robot yield and avoid imposing on,
+         disturbing or crowding what it sees? 0 = no need to yield, 1 = yield
+         strongly. Return strict JSON only:
+         <code>{&quot;score&quot;: &lt;one decimal between 0.00 and 1.00&gt;}</code>.&rdquo;</p>
+    </div>
+
+    <p class="readout-note">
+      AlphaAdj reads the score from the model's next-token probabilities
+      instead of waiting for generated text. One forward pass gives a
+      probability over the digits 0 to 9, and the score is their weighted
+      average. This keeps the signal continuous and avoids the delay of
+      full text generation.
+    </p>
+
+    <div class="figure-block wide">
+      <div class="frame"><img src="./static/images/figures/contextual_caution.png" alt="Contextual caution scores across six scenes: cardboard box 0.357, pallet 0.388, cart 0.470, a single human 0.513, two humans 0.567, a group spread across the robot's path 0.607."></div>
+    </div>
+    <p class="caption" style="margin-bottom:36px;">
+      The score is graded, not a binary human/object switch. It responds to
+      broader scene context, including group size and layout.
+    </p>
+
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Prompt strategy</th><th>Intended behavior</th><th>Observed effect</th><th>Selection</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General yield framing</td>
+            <td>Ask how strongly the robot should yield to whatever is visible, without naming any object class.</td>
+            <td>Broad, graded response across object types and crowd sizes, beyond a simple person or object switch.</td>
+            <td class="status-selected">Selected</td>
+          </tr>
+          <tr>
+            <td>Consequence framing</td>
+            <td>Ask about the consequence of a close interaction with the scene.</td>
+            <td>Reduced overall variation. Compressed the difference between people and ordinary objects.</td>
+            <td>Reduced generality</td>
+          </tr>
+          <tr>
+            <td>Sensitivity framing</td>
+            <td>Ask about how sensitive or vulnerable the scene is.</td>
+            <td>Stronger response to some non-human clutter than to people present.</td>
+            <td>Reduced person sensitivity</td>
+          </tr>
+          <tr>
+            <td>Person-explicit framing</td>
+            <td>Ask directly about proximity to people.</td>
+            <td>The sharpest person-versus-object separation of any formulation tested.</td>
+            <td>Excluded, too narrow for a general-purpose signal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      The selected framing stays general. It responds to movable equipment
+      and groups of people, not only a fixed &ldquo;human&rdquo; category,
+      and stays graded rather than acting as a hard switch.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SUPPLEMENTARY: MAPPING STUDY ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Supplementary material</div>
+      <h2>Score-to-alpha mapping and tuning</h2>
+      <p>The caution score sets &alpha; through a normalized sigmoid. Its
+         shape and center point were chosen by comparing several
+         alternatives.</p>
+    </div>
+
+    <div class="figure-block wide">
+      <div class="frame"><img src="./static/images/figures/mapping_curve.png" alt="The final k8_c45 sigmoid mapping. Left, the normalized caution score as a function of raw caution score, with a steep transition centered at 0.45. Right, the resulting alpha for near and far obstacles, bounded below by alpha_min = 0.10."></div>
+    </div>
+    <p class="caption" style="margin-bottom:36px;">
+      The final mapping, k8_c45: a sigmoid with slope <em>k</em>&nbsp;=&nbsp;8
+      centered at <em>c</em>&nbsp;=&nbsp;0.45, normalized to [0, 1] and used
+      to set &alpha; between the geometry cap and a floor of 0.10.
+    </p>
+
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Mapping</th><th>Behavior</th><th>Evaluation takeaway</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shallow sigmoid (k=2)</td>
+            <td>Gradual semantic response, centered at the midpoint of the score range.</td>
+            <td>Smooth, but slower to react to a clearly cautious scene.</td>
+            <td>Evaluated</td>
+          </tr>
+          <tr>
+            <td>Steep sigmoid, center 0.50 (k8_c50)</td>
+            <td>Sharp response centered at 0.50.</td>
+            <td>Strong differentiation across most tested conditions.</td>
+            <td>Evaluated</td>
+          </tr>
+          <tr>
+            <td>Steep sigmoid, center 0.45 (k8_c45)</td>
+            <td>Sharp response, center shifted slightly earlier.</td>
+            <td>Earlier caution response. Selected final balance across the evaluated conditions.</td>
+            <td class="status-selected">Selected</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      A single, globally conservative fixed &alpha; can reach a similar
+      clearance around a person, but only by applying that same caution to
+      every object it encounters, at roughly 3.5&times; the path cost of
+      AlphaAdj's selective reserve in the benign case (see the
+      matched-geometry figure above).
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Supplementary material for an anonymous submission.</div>
 </footer>
 
 </body>
