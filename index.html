@@ -19,12 +19,36 @@
       A vision-language model reads the robot's camera view and adjusts how
       cautious its safety controller is, without blocking the control loop.
     </p>
+    <div class="resource-links">
+      <a class="btn btn-primary" href="./static/docs/AlphaAdj_supplementary_material.pdf" target="_blank" rel="noopener">Supplementary Material (PDF)</a>
+      <a class="btn" href="#supplementary-video">Supplementary Video</a>
+    </div>
   </div>
 </section>
 
-<!-- ============ MAIN VIDEO ============ -->
-<section>
+<!-- ============ SUPPLEMENTARY MATERIAL: RESOURCES ============ -->
+<section class="supp-resources">
   <div class="wrap">
+    <div class="supp-card">
+      <div class="supp-card-text">
+        <h2>Supplementary Material</h2>
+        <p>The supplementary material contains the prompt formulation study
+           and the caution-to-alpha mapping and tuning evaluations referenced
+           in the paper. Both are also <a href="#supplementary">shown below</a>
+           on this page.</p>
+      </div>
+      <div class="supp-card-links">
+        <a class="btn btn-primary" href="./static/docs/AlphaAdj_supplementary_material.pdf" target="_blank" rel="noopener">Supplementary Material (PDF)</a>
+        <a class="btn" href="#supplementary-video">Supplementary Video</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPLEMENTARY VIDEO ============ -->
+<section id="supplementary-video">
+  <div class="wrap">
+    <div class="eyebrow video-label">Supplementary Video</div>
     <div class="frame hero-video">
       <video controls muted playsinline preload="metadata"
              src="./static/videos/AlphaAdj_supplement_final_black_intro.mp4">
@@ -191,65 +215,26 @@
   </div>
 </section>
 
-<!-- ============ EXPERIMENT VIDEOS ============ -->
-<section>
+<!-- ============ SUPPLEMENTARY MATERIAL ============ -->
+<div id="supplementary" class="supp-group">
+
+<section class="supp-parent">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Experiment videos</div>
-      <h2>Recorded runs</h2>
-      <p>Four simulation runs and three physical Clearpath Jackal runs,
-         shown at real relative timing.</p>
-    </div>
-
-    <div class="video-subhead">
-      <span class="pill">Simulation</span>
-      <h3>IsaacSim, Carter differential-drive robot</h3>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/01_static_semantics.mp4"></video></div>
-        <p class="caption">Only the target's identity changes between runs. The person gets more clearance than the box.</p>
-      </div>
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/02_moving_human.mp4"></video></div>
-        <p class="caption">A person crosses the robot's path at different speeds. Across part of that range the geometry-only controller collides and AlphaAdj does not.</p>
-      </div>
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/03_clean_delayed.mp4"></video></div>
-        <p class="caption">The person starts stationary, then moves without warning once the robot is already navigating. The robot avoids contact.</p>
-      </div>
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/04_clutter.mp4"></video></div>
-        <p class="caption">Same unexpected motion, now with added clutter. This is the only method here that avoids contact.</p>
-      </div>
-    </div>
-
-    <div class="video-subhead">
-      <span class="pill">Physical Jackal</span>
-      <h3>Clearpath Jackal, onboard camera</h3>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/05_semantic_jackal_caution_scores.mp4"></video></div>
-        <p class="caption">Onboard the Jackal, the caution score changes as the camera sees different objects and people.</p>
-      </div>
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/06_chair_vs_human.mp4"></video></div>
-        <p class="caption">The Jackal gives a wider berth to a person than to a chair in the same spot.</p>
-      </div>
-      <div class="exp-item">
-        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/07_dynamic_human.mp4"></video></div>
-        <p class="caption">The Jackal avoids a person crossing its path.</p>
-      </div>
+      <div class="eyebrow">Referenced in the paper</div>
+      <h2>Supplementary Material</h2>
+      <p>S1 and S2 below are the supplementary material for the paper. The
+         same content is available as a
+         <a href="./static/docs/AlphaAdj_supplementary_material.pdf" target="_blank" rel="noopener">PDF</a>.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ SUPPLEMENTARY: PROMPT STUDY ============ -->
+<!-- ---- Supplementary S1: prompt formulation ---- -->
 <section class="soft">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Supplementary material</div>
+      <div class="eyebrow">Supplementary Material S1</div>
       <h2>Prompt formulation</h2>
       <p>A single prompt produces the caution score. Several phrasings were
          tested before choosing this one.</p>
@@ -321,11 +306,11 @@
   </div>
 </section>
 
-<!-- ============ SUPPLEMENTARY: MAPPING STUDY ============ -->
+<!-- ---- Supplementary S2: score-to-alpha mapping ---- -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Supplementary material</div>
+      <div class="eyebrow">Supplementary Material S2</div>
       <h2>Score-to-alpha mapping and tuning</h2>
       <p>The caution score sets &alpha; through a normalized sigmoid. Its
          shape and center point were chosen by comparing several
@@ -378,8 +363,66 @@
   </div>
 </section>
 
+</div>
+
+<!-- ============ ADDITIONAL EXPERIMENT VIDEOS (website only) ============ -->
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Chapter clips</div>
+      <h2>Additional Experiment Videos</h2>
+      <p>These chapter clips provide an easier way to browse the experiments
+         shown in the full <a href="#supplementary-video">supplementary video</a>.
+         Four simulation runs and three physical Clearpath Jackal runs,
+         shown at real relative timing.</p>
+    </div>
+
+    <div class="video-subhead">
+      <span class="pill">Simulation</span>
+      <h3>IsaacSim, Carter differential-drive robot</h3>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/01_static_semantics.mp4"></video></div>
+        <p class="caption">Only the target's identity changes between runs. The person gets more clearance than the box.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/02_moving_human.mp4"></video></div>
+        <p class="caption">A person crosses the robot's path at different speeds. Across part of that range the geometry-only controller collides and AlphaAdj does not.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/03_clean_delayed.mp4"></video></div>
+        <p class="caption">The person starts stationary, then moves without warning once the robot is already navigating. The robot avoids contact.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/04_clutter.mp4"></video></div>
+        <p class="caption">Same unexpected motion, now with added clutter. This is the only method here that avoids contact.</p>
+      </div>
+    </div>
+
+    <div class="video-subhead">
+      <span class="pill">Physical Jackal</span>
+      <h3>Clearpath Jackal, onboard camera</h3>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/05_semantic_jackal_caution_scores.mp4"></video></div>
+        <p class="caption">Onboard the Jackal, the caution score changes as the camera sees different objects and people.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/06_chair_vs_human.mp4"></video></div>
+        <p class="caption">The Jackal gives a wider berth to a person than to a chair in the same spot.</p>
+      </div>
+      <div class="exp-item">
+        <div class="frame"><video controls muted playsinline preload="metadata" src="./static/videos/experiments/07_dynamic_human.mp4"></video></div>
+        <p class="caption">The Jackal avoids a person crossing its path.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="wrap">Supplementary material for an anonymous submission.</div>
+  <div class="wrap">Project page for an anonymous submission.</div>
 </footer>
 
 </body>
