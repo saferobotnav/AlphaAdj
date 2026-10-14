@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AlphaAdj: Supplementary Material</title>
+  <!-- Source for static/docs/AlphaAdj_supplementary_material.pdf. Rebuild with ./build_pdf.sh. -->
+  <style>
+    @page { size: letter; margin: 0.65in 0.75in 0.7in; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #12151c;
+      font-size: 10.5pt;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    header { text-align: center; margin-bottom: 16pt; }
+    h1 { font-size: 20pt; margin: 0 0 8pt; letter-spacing: -0.01em; }
+    .subtitle { color: #565c6b; font-size: 10.5pt; margin: 0 auto; max-width: 5.6in; }
+    .byline { color: #8a8f9c; font-size: 9.5pt; margin-top: 6pt; }
+    h2 {
+      font-size: 13.5pt;
+      margin: 0 0 6pt;
+      padding-bottom: 4pt;
+      border-bottom: 1.5pt solid #2454e8;
+    }
+    h2 .num { color: #2454e8; margin-right: 6pt; }
+    section { margin-bottom: 22pt; }
+    p { margin: 0 0 9pt; }
+    .lead { color: #565c6b; }
+    .prompt-card {
+      border: 1px solid #e6e8ee;
+      border-left: 3pt solid #2454e8;
+      border-radius: 5pt;
+      padding: 9pt 12pt;
+      margin: 10pt 0 12pt;
+    }
+    .prompt-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8a8f9c;
+      margin-bottom: 4pt;
+    }
+    .prompt-card p { margin: 0; }
+    code { font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 9pt; }
+    figure { margin: 10pt 0 10pt; page-break-inside: avoid; }
+    figure img { width: 100%; display: block; }
+    figcaption, .table-caption { font-size: 9.5pt; color: #565c6b; margin-top: 6pt; }
+    figcaption b, .table-caption b { color: #12151c; }
+    .table-caption { margin: 12pt 0 6pt; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 5pt 7pt;
+      border-bottom: 0.75pt solid #e6e8ee;
+    }
+    th {
+      font-size: 7.5pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #8a8f9c;
+      background: #f6f7fa;
+    }
+    tr:last-child td { border-bottom: 1pt solid #c9ccd6; }
+    thead tr th { border-top: 1pt solid #c9ccd6; }
+    td.selected { color: #1b3fb8; font-weight: 700; }
+    .table-note { font-size: 9.5pt; color: #565c6b; margin-top: 8pt; }
+    .table-block, .keep { page-break-inside: avoid; break-inside: avoid; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AlphaAdj: Supplementary Material</h1>
+  <p class="subtitle">Semantically Adaptive Control Barrier Functions with Vision-Language Models for Real-Time Robot Navigation</p>
+  <div class="byline">Anonymous Author(s)</div>
+</header>
+
+<section>
+  <h2><span class="num">S1</span>Prompt formulation</h2>
+  <p class="lead">A single prompt produces the caution score. Several phrasings were
+     tested before choosing this one.</p>
+
+  <div class="prompt-card">
+    <div class="prompt-label">Final prompt</div>
+    <p>&ldquo;A mobile robot shares this space with whatever is visible
+       ahead. How strongly should the robot yield and avoid imposing on,
+       disturbing or crowding what it sees? 0 = no need to yield, 1 = yield
+       strongly. Return strict JSON only:
+       <code>{&quot;score&quot;: &lt;one decimal between 0.00 and 1.00&gt;}</code>.&rdquo;</p>
+  </div>
+
+  <p>AlphaAdj reads the score from the model's next-token probabilities
+     instead of waiting for generated text. One forward pass gives a
+     probability over the digits 0 to 9, and the score is their weighted
+     average. This keeps the signal continuous and avoids the delay of
+     full text generation.</p>
+
+  <figure>
+    <img src="../static/images/figures/contextual_caution.png" alt="Contextual caution scores across six scenes: cardboard box 0.357, pallet 0.388, cart 0.470, a single human 0.513, two humans 0.567, a group spread across the robot's path 0.607.">
+    <figcaption><b>Figure S1.</b> Contextual caution scores. The score is graded, not a
+      binary human/object switch. It responds to broader scene context,
+      including group size and layout.</figcaption>
+  </figure>
+
+  <div class="table-block">
+  <div class="table-caption"><b>Table S1.</b> Prompt formulations compared.</div>
+  <table>
+    <thead>
+      <tr><th>Prompt strategy</th><th>Intended behavior</th><th>Observed effect</th><th>Selection</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>General yield framing</td>
+        <td>Ask how strongly the robot should yield to whatever is visible, without naming any object class.</td>
+        <td>Broad, graded response across object types and crowd sizes, beyond a simple person or object switch.</td>
+        <td class="selected">Selected</td>
+      </tr>
+      <tr>
+        <td>Consequence framing</td>
+        <td>Ask about the consequence of a close interaction with the scene.</td>
+        <td>Reduced overall variation. Compressed the difference between people and ordinary objects.</td>
+        <td>Reduced generality</td>
+      </tr>
+      <tr>
+        <td>Sensitivity framing</td>
+        <td>Ask about how sensitive or vulnerable the scene is.</td>
+        <td>Stronger response to some non-human clutter than to people present.</td>
+        <td>Reduced person sensitivity</td>
+      </tr>
+      <tr>
+        <td>Person-explicit framing</td>
+        <td>Ask directly about proximity to people.</td>
+        <td>The sharpest person-versus-object separation of any formulation tested.</td>
+        <td>Excluded, too narrow for a general-purpose signal</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="table-note">The selected framing stays general. It responds to movable equipment
+     and groups of people, not only a fixed &ldquo;human&rdquo; category,
+     and stays graded rather than acting as a hard switch.</p>
+  </div>
+</section>
+
+<section>
+  <div class="keep">
+  <h2><span class="num">S2</span>Score-to-alpha mapping and tuning</h2>
+  <p class="lead">The caution score sets &alpha; through a normalized sigmoid. Its
+     shape and center point were chosen by comparing several
+     alternatives.</p>
+
+  <figure>
+    <img src="../static/images/figures/mapping_curve.png" alt="The final k8_c45 sigmoid mapping. Left, the normalized caution score as a function of raw caution score, with a steep transition centered at 0.45. Right, the resulting alpha for near and far obstacles, bounded below by alpha_min = 0.10.">
+    <figcaption><b>Figure S2.</b> The final mapping, k8_c45: a sigmoid with slope
+      <em>k</em>&nbsp;=&nbsp;8 centered at <em>c</em>&nbsp;=&nbsp;0.45, normalized
+      to [0, 1] and used to set &alpha; between the geometry cap and a floor
+      of 0.10.</figcaption>
+  </figure>
+  </div>
+
+  <div class="table-block">
+  <div class="table-caption"><b>Table S2.</b> Mapping formulations compared.</div>
+  <table>
+    <thead>
+      <tr><th>Mapping</th><th>Behavior</th><th>Evaluation takeaway</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shallow sigmoid (k=2)</td>
+        <td>Gradual semantic response, centered at the midpoint of the score range.</td>
+        <td>Smooth, but slower to react to a clearly cautious scene.</td>
+        <td>Evaluated</td>
+      </tr>
+      <tr>
+        <td>Steep sigmoid, center 0.50 (k8_c50)</td>
+        <td>Sharp response centered at 0.50.</td>
+        <td>Strong differentiation across most tested conditions.</td>
+        <td>Evaluated</td>
+      </tr>
+      <tr>
+        <td>Steep sigmoid, center 0.45 (k8_c45)</td>
+        <td>Sharp response, center shifted slightly earlier.</td>
+        <td>Earlier caution response. Selected final balance across the evaluated conditions.</td>
+        <td class="selected">Selected</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="table-note">A single, globally conservative fixed &alpha; can reach a similar
+     clearance around a person, but only by applying that same caution to
+     every object it encounters, at roughly 3.5&times; the path cost of
+     AlphaAdj's selective reserve in the benign case (see the
+     matched-geometry comparison in the paper).</p>
+  </div>
+</section>
+
+</body>
+</html>
